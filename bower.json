@@ -1,0 +1,24 @@
+{
+  "name": "demonode",
+  "description": "Example Node Js",
+  "main": "index.js",
+  "authors": [
+    "Suraj Mohan Bishwakarma"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "handlebars": "^4.0.5",
+    "requirejs": "^2.2.0"
+  }
+}

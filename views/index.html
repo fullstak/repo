@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html>
+	<title>Shopping Cart</title>
+	<head>
+		<link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/css/cart.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+        <header class="top-header">
+            <div class="row">
+                <div class="col-sm-12 col-xs-8">
+                    <div class="main-header">Your Shopping Bag</div>
+                </div>
+                <div class="col-xs-4 visible-xs">
+                    <div class="total-item-selected"><strong><span class="item-count">0</span></strong> ITEMS</div>
+                </div>
+            </div>
+            <div class="row isDesktop">
+                <div class="col-sm-12">
+                    <hr class="small" />
+                </div>
+            </div>
+
+        </header>
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="form-horizontal" role="form">
+                    <table id="cart-table" class="flex-table linearize">
+                        <thead>
+                            <tr>
+                                <th class="width-full" rowspan="1"><strong><span class="item-count">0</span></strong> ITEMS</th>
+                                <th rowspan="1" class="text-center">SIZE</th>
+                                <th rowspan="1" class="text-center">QTY</th>
+                                <th rowspan="1" class="text-center">PRICE</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-holder"></tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="row checkout">
+            <div class="col-sm-4 isDesktop">
+                <ul>
+                    <li class="need-help">
+                        Need Help or have questions?
+                    </li>
+                    <li class="info-text">
+                        Call Customer Service at 1-800-555-5555
+                    </li>
+                    <li>
+                        <a href="#" class="info-text-underline">Chat with one of our stylists</a>
+                    </li>
+                    <li>
+                        <a href="#" class="info-text-underline">See return and exchange policy</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-sm-8">
+                <form class="form-horizontal apply-promo" role="form">
+                    <div class="form-group mobile-center">
+                        <label class="control-label col-sm-4" for="promo-code">Enter Promotion Code or Gift Card </label>
+                        <div class="col-sm-8 align-promo">
+                           
+                           
+                            <span class="inline-block sm-mobile-bottom-margin">
+                                <input type="text" class="form-control inline-block" id="promo-code" />
+                            </span>
+                            <span class="inline-block">
+                                <button id="apply-promotion" type="button" class="btn btn-default">APPLY</button>
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <table class="checkout-amount">
+                        <tbody>
+                            <tr>
+                                <td class="width-full"><strong>SUBTOTAL</strong></td>
+                                <td>
+                                    <div class="price">
+                                        <span class="currency">$</span>
+                                        <span class="amount sub-total"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="is-promotion-code-applied">
+                                <td class="width-full">PROMOTION CODE <strong class="fill-promotion-code">JF10</strong> APPLIED</td>
+                                <td>
+                                    <div class="price">
+                                        <span class="currency">$</span>
+                                        <span class="amount promo-discount">17.00</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="width-full"><div><strong>ESTIMATED SHIPPING*</strong></div><span class="text-muted-2">You Qualify for free shipping because your order is above $50*</span></td>
+                                <td>
+                                    FREE
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="width-full"><div><strong>ESTIMATED TOTAL</strong></div><span class="text-muted-2">Tax will be applied during checkout</span></td>
+                                <td>
+                                    <div class="price">
+                                        <span class="currency">$</span>
+                                        <span class="amount estimated-total">17.00</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </form>
+                <div class="sm-margin-top">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-push-6 align-checkout">
+                            <button type="submit" class="btn btn-default checkout-button">Checkout</button>
+                        </div>
+                        <div class="col-sm-6 col-sm-pull-3 align-checkout">
+                            <a href="#" class="continue-shopping">CONTINUE SHOPPING</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="sm-margin-top">
+                    <div class="row">
+                        <div class="col-sm-12 align-checkout">
+                            <span class="secure-checkout-info">Secure checkout. Shopping is always safe & secure.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+	<script type="text/javascript" src="/components/requirejs/require.js" data-main="app/main"></script>
+
+
+	<!--Start Templates-->
+    <script id="cart-template" type="text/x-handlebars-template">
+        {{#each filterItems}}
+        <tr id="cart-{{p_id}}">
+            <td class="width-full">
+                <section class="cart-item-wrapper">
+                    <div class="product-image">
+                        <img src="images/{{p_image}}" class="res-image" />
+
+                    </div>
+                    <div class="product-details">
+                        <strong class="product-title upper-case">{{p_name}}</strong>
+                        <div class="product-style-options upper-case">
+                            Style #: {{p_style}}
+                        </div>
+                        <div class="product-style-options first-caps">
+                            Colour: {{p_selected_color.name}}
+                        </div>
+                        <div class="product-style-options isMobile sm-margin-bottom">
+                            Size: <span class="upper-case">{{p_selected_size.code}}</span>
+                        </div>
+                        <div class="isMobile sm-margin-bottom">
+                            <div>
+                                <label class="control-label" id="m_label_{{p_id}}" for="m_quantity_fld_{{p_id}}">QTY:</label>
+                                <div class="quantity-field">
+                                    <input title="Quantity for product" aria-labelledby="m_label_{{p_id}}" aria-required="true" type="number" class="form-control align-text-center quantity-fld" id="m_quantity_fld_{{p_id}}" placeholder="" value="{{p_quantity}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="price isMobile">
+                            {{#ifComp p_price '===' p_originalprice}}
+                            <span class="currency">{{c_currency}}</span>
+                            <span class="amount">{{decimal p_price}}</span>
+
+                            {{else}}
+                            <div class="set-relative over-price">
+                                <span class="currency">{{c_currency}}</span>
+                                <span class="amount">{{decimal p_originalprice}}</span>
+                            </div>
+                            <div class="set-relative">
+                                <span class="currency">{{c_currency}}</span>
+                                <span class="amount">{{decimal p_price}}</span>
+                            </div>
+                            {{/ifComp}}
+
+                        </div>
+                    </div>
+
+                    <div class="item-actions">
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="#" id="x_edit_{{p_id}}" class="x_edit">EDIT</a>
+                                </td>
+                                <td>
+                                    <a href="#" id="x_remove_{{p_id}}" class="x_remove">X REMOVE</a>
+                                </td>
+                                <td>
+                                    <a href="#">SAVE FOR LATER</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+
+            </td>
+            <td class="text-center sm-min-height sm-padding-top">
+                <span class="isDesktop">
+                    <span class="upper-case">{{p_selected_size.code}}</span>
+                </span>
+
+            </td>
+            <td>
+                <div class="isDesktop">
+                    <label class="control-label visible-none" id="d_label_{{p_id}}" for="d_quantity_fld_{{p_id}}">QTY:</label>
+                    <div class="quantity-field">
+                        <input title="Quantity for product" aria-labelledby="d_label_{{p_id}}" aria-required="true" type="number" class="form-control align-text-center quantity-fld" id="d_quantity_fld_{{p_id}}" placeholder="" value="{{p_quantity}}">
+                    </div>
+                </div>
+            </td>
+            <td class="text-center sm-min-height sm-padding-top">
+                <div class="isDesktop">
+                    <div class="price">
+                        {{#ifComp p_price '===' p_originalprice}}
+                        <span class="currency">{{c_currency}}</span>
+                        <span class="amount">{{decimal p_price}}</span>
+
+                        {{else}}
+                        <div class="set-relative over-price">
+                            <span class="currency">{{c_currency}}</span>
+                            <span class="amount">{{decimal p_originalprice}}</span>
+                        </div>
+                        <div class="set-relative">
+                            <span class="currency">{{c_currency}}</span>
+                            <span class="amount">{{decimal p_price}}</span>
+                        </div>
+                        {{/ifComp}}
+
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        {{/each}}
+    </script>
+    <!--End Tempaltes-->
+
+	</body>
+	
+</html>

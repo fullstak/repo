@@ -1,0 +1,16 @@
+{  
+   "promo":[  
+      {  
+         "p_offer_code":"jf10",
+         "p_discount_percent":"0.07"
+      },
+      {  
+         "p_offer_code":"pb70",
+         "p_discount_percent":"0.02"
+      },
+      {  
+         "p_offer_code":"kl44",
+         "p_discount_percent":"0.12"
+      }
+   ]
+}

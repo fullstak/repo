@@ -1,0 +1,347 @@
+﻿/*Custom CSS*/
+
+/*Common*/
+
+.visible-none{
+    display:none;
+}
+.sm-min-height{
+    height: 34px;
+}
+.sm-padding-top{
+    padding-top: 16px !important;
+}
+.sm-margin-bottom{
+    margin-bottom: 10px;
+}
+.sm-margin-top{
+    margin-top: 10px;
+}
+.isMobile{
+    visibility:hidden;
+}
+.text-muted-2{
+    color: #c4c4c4;
+}
+.inline-block{
+    display:inline-block;
+    
+}
+.upper-case{
+    text-transform:uppercase;
+}
+.first-caps{
+    text-transform:capitalize;
+}
+.set-relative{
+    position:relative;
+}
+.over-price{
+    text-decoration:line-through;
+    color:#dcdcdc;
+}
+.form-control.align-text-center{
+    text-align:center !important;
+}
+/*Main Header*/
+
+.main-header{
+    min-height: 100PX;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: #606062;
+}
+hr.small{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+hr.big{
+    display: block;
+    height: 6px;
+    border: 0;
+    border-top: 6px solid #dcdcdc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+table .width-full {
+    width: 100%;
+}
+.flex-table tbody tr:first-child, .checkout-amount tbody tr:first-child{
+  border-top: 6px solid #E0E0E0;
+}
+.flex-table tbody tr:last-child, .checkout-amount tbody tr:last-child {
+  border-bottom: 6px solid #E0E0E0;
+}
+.checkout-amount tbody tr:last-child {
+   border-top: 1px solid #E0E0E0;
+  border-bottom: 6px solid #E0E0E0;
+}
+.flex-table tbody tr{
+  border-top: 1px solid #E0E0E0;
+}
+.flex-table .item-actions table tr:first-child{
+  border-top: none;
+}
+.flex-table .item-actions table tr:last-child{
+  border-bottom: none;
+}
+.checkout-amount tbody tr td{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.flex-table thead th {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.4;
+    text-transform: capitalize;
+    white-space: nowrap;
+    color: #767676;
+}
+.flex-table td, .flex-table th {
+    padding: 10px;
+    vertical-align: top;
+    min-width:80px;
+}
+
+/*Action*/
+.item-actions table td{
+    min-width: 10px;
+    border-right: 1px solid #e0e0e0;
+    padding: 1px 10px;
+}
+.item-actions table td:last-child { 
+    border-right: none; 
+}
+.item-actions{
+    position:absolute;
+    left: 155px;
+    top: 130px;
+}
+
+.item-actions a{
+    color: #979797;
+    text-decoration:none;
+}
+.cart-item-wrapper .product-image {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    min-height: 190px;
+}
+.cart-item-wrapper .product-details{
+   padding-left: 165px;
+   padding-top: 10px;
+}
+
+.product-style-options{
+    color: #929292;
+    font-size: 12px;
+}
+.cart-item-wrapper .product-details .product-title{
+    color: #646464;
+}
+
+.price{
+   position:relative;
+
+}
+.form-control{
+    border-radius: 0px;
+}
+label.control-label{
+    color: #929292 !important;
+    font-weight:normal;
+}
+.price .currency{
+    position: absolute;
+    transform: translate(0,-50%);
+    top: 40%;
+    pointer-events: none;
+    margin-left: 0.2em; /* adjust as appropriate */
+    font-size: 10px;
+
+}
+.price .amount{
+   padding-left: 9px;
+   font-size:18px;
+}
+.cart-item-wrapper {
+    position: relative;
+    width: 100%;
+   
+}
+.quantity-field{
+    display: inline-block;
+    width: 60px;
+}
+
+/*Checkout*/
+
+.checkout{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.checkout .margin-right{
+    margin-right: 30px;
+   
+}
+.checkout .secure-checkout-info{
+     background: url(../images/lock.jpg) 0px 0px no-repeat;
+     display: inline-block;
+     height: 25px;
+     padding-left: 25px;
+     padding-top: 7px;
+     color: #a3a2a2;
+}
+.checkout ul{
+    list-style:none;
+    padding:0px;
+}
+.checkout ul li{
+   margin-bottom: 10px;
+   max-width: 200px;
+}
+.checkout ul li.need-help{
+    font-weight:bold;
+}
+.checkout ul li a.info-text-underline{
+    color: #939393;
+    text-decoration:underline;
+    font-size: 16px;
+}
+.checkout ul li.info-text{
+    color: #939393;
+    font-size: 16px;
+}
+.checkout .form-horizontal .control-label{
+    text-align:left !important;
+    padding-top: 0px;
+}
+.checkout .apply-promo button{
+    border-radius: 0px;
+    width: 82px;
+   
+}
+
+.checkout .apply-promo .align-promo, .align-checkout{
+  text-align:right;
+}
+.checkout .checkout-button {
+  width: 117px;
+  height: 40px;
+  border-radius: 0px;
+  background: #1069bd;
+  color: #ffffff;
+}
+.checkout a.continue-shopping {
+  color: #616161;
+  text-decoration:underline;
+  margin-top:10px;
+  display:block;
+}
+
+.is-promotion-code-applied{
+    display: none;
+}
+/*Media Queries*/
+
+@media screen and (max-width: 768px) {
+
+    /*Header*/
+    .main-header{
+        min-height: 42PX;
+        text-transform: uppercase;
+        font-size: 25px;
+        color: #606062;
+        margin-top: 8px;
+    }
+    .total-item-selected{
+        margin-top: 15px;
+    }
+
+    .flex-table.linearize thead {
+        display: none;
+    }
+   .flex-table td, .flex-table th {
+        min-width: 0px;
+        height: auto;
+    }
+    .checkout-amount tbody tr:first-child{
+      border-top: 1px solid #E0E0E0;
+    }
+     .checkout-amount tbody tr:last-child{
+      border-bottom: none;
+    }
+   .price .currency{
+        position: absolute;
+        transform: translate(0,-50%);
+        top: 40%;
+        pointer-events: none;
+        margin-left: 0.2em; /* adjust as appropriate */
+
+    }
+    .price .amount{
+       padding-left: 8px;
+       font-size:18px;
+    }
+    .isDesktop{
+        display:none;
+    }
+     .isMobile{
+        visibility:visible;
+    }
+    .item-actions{
+        position:static;
+        left: initial;
+        top: initial;
+        margin: 10px 0;
+        font-size: 12px;
+    }
+    .checkout .apply-promo .align-promo, .align-checkout{
+      text-align:center;
+    }
+    .checkout .apply-promo .mobile-center{
+        text-align:center !important;
+    }
+    /*Checkout*/
+
+    .checkout{
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 479px) {
+
+     /*Header*/
+    .main-header{
+        min-height: 33PX; 
+        font-size: 16px;
+        margin-top: 12px;
+    }
+    .total-item-selected{
+        margin-top: 12px;
+    }
+
+    .res-image{
+        width: 130px;
+        height: auto;
+    }
+    .product-details{
+        left: 150px;
+    }
+    .sm-mobile-bottom-margin{
+        margin-bottom: 10px;
+    }
+    .item-actions{              
+        font-size: 11px;
+    }
+    .main-header{
+        font-size: 13px;
+        margin-top: 15px;
+    }
+}
+
